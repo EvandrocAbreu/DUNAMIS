@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discipulado Dunamis</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Discipulado Dunamis</h1>
+        <nav>
+            <a href="#" id="nav-home">Início</a>
+            <a href="#" id="nav-families">Famílias</a>
+            <a href="#" id="nav-birthdays">Aniversariantes</a>
+            <a href="#" id="nav-stats">Estatísticas</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <section class="main-section" id="home-section">
+            <h2>Bem-vindo ao Discipulado Dunamis</h2>
+            <p>Gerencie as famílias e acompanhe os aniversariantes do mês.</p>
+        </section>
+
+        <section class="main-section" id="families-section" style="display: none;">
+            <h2>Famílias Cadastradas</h2>
+            <input type="text" class="search-bar" placeholder="Buscar por nome...">
+            <button class="btn btn-add">Adicionar Nova Família</button>
+            <input type="file" id="excel-upload" accept=".xlsx, .xls">
+            <div id="families-list"></div>
+        </section>
+
+        <section class="sidebar" id="birthdays-section" style="display: none;">
+            <h2>Aniversariantes do Mês</h2>
+            <div class="month-filter" id="month-filter"></div>
+            <div id="birthdays-list"></div>
+        </section>
+
+        <section class="main-section" id="stats-section" style="display: none;">
+            <h2>Estatísticas</h2>
+            <div id="stats-content"></div>
+        </section>
+    </div>
+
+    <div id="family-form" style="display: none;">
+        <h3>Adicionar/Editar Família</h3>
+        <input type="text" id="family-name" placeholder="Nome da Família">
+        <input type="text" id="member-name" placeholder="Nome do Membro">
+        <input type="tel" id="member-phone" placeholder="Telefone (ex.: (11) 98765-4321)">
+        <input type="text" id="member-address" placeholder="Endereço">
+        <input type="date" id="member-birthdate">
+        <select id="member-frequency">
+            <option value="Regular">Regular</option>
+            <option value="Ocasional">Ocasional</option>
+            <option value="Ausente">Ausente</option>
+        </select>
+        <select id="member-marital-status">
+            <option value="Solteiro">Solteiro</option>
+            <option value="Casado">Casado</option>
+            <option value="Divorciado">Divorciado</option>
+            <option value="Viúvo">Viúvo</option>
+        </select>
+        <select id="member-sex">
+            <option value="Masculino">Masculino</option>
+            <option value="Feminino">Feminino</option>
+        </select>
+        <input type="file" id="member-photo" accept="image/*">
+        <button class="btn" id="save-family-btn">Salvar</button>
+        <button class="btn" id="cancel-family-btn">Cancelar</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
